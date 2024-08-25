@@ -1,0 +1,342 @@
+.main {
+    max-width: rem(1110);
+    margin: rem(20) auto;
+    border-radius: rem(20);
+    background: $White;
+    overflow: hidden;
+
+    @include breakPointDown(desktop) {
+        max-width: rem(1024);
+        margin: rem(20) rem(30);
+
+    }
+
+    @include breakPointDown(mobile) {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    &.grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(20);
+
+        @include breakPointDown(tablet) {
+            grid-template-columns: 1fr;
+        }
+
+
+        .grid-left {
+            padding: rem(40) rem(44);
+
+            .flex {
+                display: flex;
+                align-items: center;
+                gap: rem(22);
+                padding-bottom: rem(20);
+
+                @include breakPointDown(mobile) {
+                    display: block;
+                }
+
+                .link {
+                    display: block;
+                    background: none;
+                    outline: none;
+                    border: none;
+                    text-decoration: underline;
+                    text-decoration-thickness: 2px;
+                    text-underline-offset: 2px;
+                    font-size: rem(18);
+                    font-weight: 500;
+                    color: $Slate-700;
+                    cursor: pointer;
+                    transition: .3s ease;
+
+                    &:hover {
+                        color: $Slate-900;
+                    }
+                }
+            }
+
+            .justify-content-between {
+                justify-content: space-between;
+            }
+
+            .justify-content-center {
+                justify-content: center;
+
+                .align {
+                    position: absolute;
+                    top: 46.5%;
+                    right: 1px;
+                    font-size: 20px;
+                    z-index: 100;
+                    color: $Slate-700;
+                    padding: rem(6.6) rem(20);
+                    background: $Slate-100;
+                    border-radius: 0 4px 4px 0;
+                }
+            }
+
+            .main-form {
+                width: 100%;
+
+                .form-group {
+                    padding: rem(10);
+                    margin-bottom: rem(18);
+                    display: block;
+
+                    @include breakPointDown(mobile) {
+                        margin-bottom: rem(5);
+                    }
+
+                    .form-control {
+                        font-size: rem(18);
+                        color: $Slate-700;
+                        font-weight: 500;
+                        padding-bottom: rem(10);
+
+                    }
+
+                    .input-control {
+                        display: block;
+                        padding: rem(13) rem(18);
+                        border: 1px solid $Slate-500;
+                        border-radius: 5px;
+                        width: 100%;
+                        margin-top: 10px;
+                        outline: none;
+                        font-size: rem(17);
+                        font-weight: 700;
+                        font-family: inherit;
+                        color: $Slate-900;
+
+                        &:hover {
+                            cursor: pointer;
+                            border-color: $Slate-700;
+                        }
+
+
+                    }
+
+                    .ps-6 {
+                        padding-left: rem(65);
+                    }
+
+                    .input {
+                        position: relative;
+                    }
+
+
+                    .pound {
+                        position: absolute;
+                        top: 46.1%;
+                        left: 1px;
+                        font-size: 20px;
+                        z-index: 100;
+                        color: $Slate-700;
+                        padding: rem(6.6) rem(20);
+                        background: $Slate-100;
+                        border-radius: 4px 0 0 4px;
+                    }
+
+                    .error_msg {
+                        font-size: rem(14);
+                        color: $Red;
+                        font-weight: 500;
+                        position: absolute;
+                        padding-top: rem(10);
+                        display: none;
+                    }
+                }
+
+                .error {
+
+                    .input-control {
+                        border-color: $Red;
+                    }
+
+                    .pound,
+                    .align {
+                        color: $White;
+                        background: $Red;
+                        border-color: $Red;
+                    }
+
+                }
+
+                .type {
+                    margin-bottom: rem(35);
+
+                    .error {
+                        padding-top: 0 !important;
+                    }
+
+                    .input-control {
+                        margin-bottom: rem(10);
+                        padding: rem(8) rem(20);
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+
+
+                        &:hover {
+                            border-color: $Lime;
+                        }
+
+                        .radio-control {
+                            appearance: none;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            position: relative;
+                            top: 4px;
+                            width: 18px;
+                            height: 18px;
+                            margin-right: 8px;
+                            cursor: pointer;
+                            border: 2px solid $Slate-700;
+                            border-radius: 50%;
+                            outline: none;
+                        }
+
+                        .form-control {
+                            cursor: pointer;
+                        }
+
+                        /* Add custom checked state */
+                        input[type="radio"]:checked {
+                            border-color: $Lime;
+                            background-color: $Lime;
+                            border: 2px solid $Lime;
+                        }
+
+
+                        /* Focused state (optional for accessibility) */
+                        input[type="radio"]:focus {
+                            outline: 2px solid $Lime;
+                            outline-offset: 2px;
+                        }
+                    }
+
+                    .checked {
+                        background: hsl(60, 72%, 93%);
+                        border-color: $Lime;
+                    }
+
+                }
+            }
+        }
+
+        .result-card {
+            background-color: $Slate-900;
+            border-bottom-left-radius: rem(80);
+            color: $White;
+            padding: rem(40);
+
+            @include breakPointDown(mobile) {
+                border-radius: 0;
+            }
+
+            &_title {
+                font-size: rem(24);
+                color: $White;
+                padding: rem(24);
+                font-weight: 700;
+            }
+
+            .lead {
+                color: $Slate-500;
+                font-size: rem(16);
+                font-weight: 700;
+            }
+
+            .empty {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
+
+            .show_result {
+
+                .title {
+                    padding-bottom: rem(26);
+                }
+
+                .lead {
+                    font-weight: 600;
+                }
+
+                .result {
+                    background: $Darker-Slate-900;
+                    padding: rem(30);
+                    margin-top: rem(30);
+                    border-radius: 10px;
+                    position: relative;
+                    overflow: hidden;
+                    z-index: 2;
+
+                    .border {
+                        border: 3px solid $Lime;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        z-index: 0;
+                    }
+
+                    .description {
+                        font-size: rem(18);
+                        font-weight: 500;
+                        color: $Slate-500;
+                        padding-bottom: 25px;
+                    }
+
+                    .value {
+                        color: $Lime;
+                        font-size: rem(60);
+                        padding-bottom: rem(25);
+                        border-bottom: 1px solid $Slate-700;
+                    }
+
+                    .total {
+                        margin-top: rem(34);
+
+                        p {
+                            color: $Slate-300;
+                        }
+
+                        .total-value {
+                            color: $White;
+                            font-size: rem(24);
+
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
+}
+
+.footer {
+    margin-top: rem(40);
+    padding: rem(30);
+    text-align: center;
+    background: $Slate-900;
+    color: $Lime;
+
+    a {
+        color: $Slate-500;
+        transition: color .2s ease;
+
+        &:hover {
+            color: $Slate-700;
+        }
+    }
+}
