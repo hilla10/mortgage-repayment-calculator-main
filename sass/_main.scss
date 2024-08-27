@@ -203,26 +203,20 @@
                             cursor: pointer;
                         }
 
-                        /* Add custom checked state */
-                        input[type="radio"]:checked {
-                            border-color: $Lime;
-                            background-color: $Lime;
-                            border: 2px solid $Lime;
-                        }
+                    }
 
 
-                        /* Focused state (optional for accessibility) */
-                        input[type="radio"]:focus {
-                            outline: 2px solid $Lime;
-                            outline-offset: 2px;
-                        }
+                    .checked input[type="radio"] {
+                        border-color: $Lime;
+                        background-color: $Lime;
+                        border: 2px solid $Lime;
+                        outline: 2px solid $Lime;
+                        outline-offset: 2px;
                     }
 
                     .checked {
-                        background: hsl(60, 72%, 93%);
                         border-color: $Lime;
                     }
-
                 }
             }
         }
@@ -261,6 +255,7 @@
             }
 
             .show_result {
+                display: none;
 
                 .title {
                     padding-bottom: rem(26);

@@ -25,7 +25,7 @@
     <div class="grid-left">
       <div class="flex justify-content-between">
         <h1 class="title">Mortgage Calculator</h1>
-        <button class="link">Clear All</button>
+        <button class="link" id="clear">Clear All</button>
       </div>
 
       <form class="main-form">
@@ -34,7 +34,7 @@
           <div class="input">
             <label for="amount" class="form-control">Mortgage Amount</label>
             <span class="pound">£</span>
-            <input type="text" class="input-control ps-6">
+            <input type="text" class="input-control ps-6" id="amount">
           </div>
           <span class="error_msg">This field is required</span>
         </div>
@@ -43,7 +43,7 @@
           <div class="form-group">
             <div class="input">
               <label for="term" class="form-control">Mortgage Term</label>
-              <input type="text" class="input-control">
+              <input type="text" class="input-control" id="term">
               <span class="align">years</span>
             </div>
             <span class="error_msg">This field is required</span>
@@ -51,7 +51,7 @@
           <div class="form-group">
             <div class="input">
               <label for="rate" class="form-control">Interest Rate</label>
-              <input type="text" class="input-control">
+              <input type="text" class="input-control" id="rate">
               <span class="align">%</span>
 
             </div>
@@ -62,32 +62,33 @@
         <div class="form-group type">
           <label for="type" class="form-control">Mortgage Type</label>
 
-          <div class="input-control">
-            <input type="radio" class="radio-control" name="type" value="Repayments">
+          <div class="input-control select">
+            <input type="radio" class="radio-control" name="type" value="Repayments" id="repayment">
             <label for="repayments " class="form-control">Repayments</label>
           </div>
 
-          <div class="input-control">
-            <input type="radio" class="radio-control " name="type" value="Interest Only">
+          <div class="input-control select">
+            <input type="radio" class="radio-control" name="type" value="Interest-Only" id="interest">
             <label for="interest" class="form-control">Interest Only</label>
           </div>
           <span class="error_msg">This field is required</span>
         </div>
-        <button class="btn"><img src="assets/images/icon-calculator.svg" alt="Calculator"> Calculate Repayments</button>
+        <button class="btn" id="calculator"><img src="assets/images/icon-calculator.svg" alt="Calculator"> Calculate
+          Repayments</button>
       </form>
     </div>
 
 
-    <div class="result-card">
-      <!-- <div class="empty">
+    <div class="result-card" id="resultCard">
+      <div class="empty" id="empty">
         <img src="assets/images/illustration-empty.svg" alt="illustration-empty">
 
         <h2 class="result_title">Results How here</h2>
         <p class="lead"> Complete the form and click “calculate repayments” to see what
           your monthly repayments would be.</p>
-      </div> -->
+      </div>
 
-      <div class="show_result">
+      <div class="show_result" id="showResult">
         <h2 class="title">Your Results</h2>
         <p class="lead">
           Your results are shown below based on the information you provided.
@@ -109,10 +110,10 @@
     </div>
   </main>
 
-<footer class="footer">
-   Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-   Coded by <a href="https://github.com/hilla10">Hailemichael Negusse</a>.
-</footer>
+  <footer class="footer">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/hilla10">Hailemichael Negusse</a>.
+  </footer>
 
   <script src="js/app.js"></script>
 </body>
